@@ -38,8 +38,7 @@ namespace RestAPIExample
             services.AddOptions();
             services.AddDbContext<DemoDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ICustomerRepository, CustomerRepository>();
-            // services.AddScoped<ISeedDataService, SeedDataService>();
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +49,6 @@ namespace RestAPIExample
                 app.UseDeveloperExceptionPage();
             }
 
-            // app.UseMiddleware<CustomMiddleware>();  Not so pretty, next line replaces it.
             app.UseCustomMiddleware();
             app.UseDefaultFiles();
             app.UseStaticFiles();
@@ -61,8 +59,6 @@ namespace RestAPIExample
                 mapper.CreateMap<Customer, CustomerCreateDto>().ReverseMap();
                 mapper.CreateMap<Customer, CustomerUpdateDto>().ReverseMap();
             });
-
-            // app.AddSeedData();
 
             app.UseMvc();
         }

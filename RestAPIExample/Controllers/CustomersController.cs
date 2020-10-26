@@ -5,9 +5,7 @@ using RestAPIExample.Dtos;
 using RestAPIExample.Entities;
 using RestAPIExample.Repositories;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestAPIExample.Controllers
 {
