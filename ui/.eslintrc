@@ -1,0 +1,97 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "prettier",
+    "promise"
+  ],
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error"
+    ],
+    "no-console": [
+      "off"
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "__typename",
+          "__DEV__"
+        ]
+      }
+    ],
+    "prefer-destructuring": [
+      "warn",
+      {
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": false,
+          "object": false
+        }
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "prettier/prettier": "error",
+    "no-shadow": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "off" // does not seem to understand TSX components
+    ],
+    "@typescript-eslint/naming-convention": [
+      "warn"
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "acc", // for reduce accumulators
+          "accumulator", // for reduce accumulators
+          "e", // for e.returnValue
+          "ctx", // for Koa routing
+          "req", // for Express requests
+          "request", // for Express requests
+          "res", // for Express responses
+          "response", // for Express responses
+          "$scope", // for Angular 1 scopes
+          "draft", // for immer
+          "draftState" // for immer
+        ]
+      }
+    ],
+    "no-undef": 0,
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ]
+  }
+}
