@@ -1,6 +1,14 @@
 # REST API Demonstration
 
-This is a trivial example of a REST application. In the classroom environment, each line of code is discussed and greater depth in the labs. This is an introduction to REST concepts and common programming patterns.
+## Summary
+
+This is a trivial example of a REST wep application. In the classroom environment, each line of code is discussed and greater depth in the labs. This is an introduction to REST concepts and common programming patterns.
+
+## User Interface
+
+There's also TypeScript component to make it easier to visualize the (Create, Read, Update, Delete) operations using the C# API as a backend server.
+
+![User Interface Image](assets/crud-ui.gif "User Interface")
 
 ## Quickstart
 
